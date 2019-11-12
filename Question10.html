@@ -1,0 +1,79 @@
+<html>
+<head>
+<title> Quiz Running </title>
+</head>
+<body onload = "hide()">
+<p id="demo"></p>
+<div>
+<form>
+<h4>Q10:The office of the president can fall vacant due to?</h4>
+</form><form>
+<input type = "radio" name="ques10" id="ques10" value="resignation" checked>resignation <br>
+<input type = "radio" name="ques10" id="ques10" value="death">death <br>
+<input type = "radio" name="ques10" id="ques10" value="removal">removal <br>
+<input type = "radio" name="ques10" id="ques10" value="All of the above">All of the above<br></form></div>
+<div id = "hide">
+<h6> Answer is: Option(D).</h6>
+</div>
+<div><table><tr><th>
+<input type="button" id="btn1" value="Back" onclick="back()"></th>
+<th><input type="button" id="btn2" value="Submit" onclick="submit()"></th>
+<th><input type = "button" id="btn3" value="Show Answer" onclick="hideshow()"></th>
+</tr></table></div>
+<script>
+function back()
+{
+window.location.href = "Question9.html";
+}
+function submit()
+{
+var ele = document.getElementsByName("ques10");
+for(i=0;i<ele.length;i++){
+if(ele[i].checked)
+var ans10 = ele[i].value;
+}
+if(ans10 == "All of the above")
+{alert("Right Answer")}
+else
+{
+alert("Wrong Answer:,  Right Answer is-- All of the above")
+}
+window.location = "Submit.html";
+}
+function hide()
+{
+document.getElementById("hide").style.display = "none";
+}
+function hideshow()
+{
+var x = document.getElementById("hide");
+if(x.style.display === "none")
+{
+x.style.display = "block";
+document.getElementById("btn3").value = "Hide Answer";
+}
+else
+{
+x.style.display = "none";
+document.getElementById("btn3").value = "Show Answer";
+}
+}
+function Redirect() 
+    {  
+        window.location="Submit.html"; 
+    } 
+    //document.write("You will be redirected to a new page in 20 seconds"); 
+    //setTimeout('Redirect()', 20000);
+var seconds_left = 20;
+var interval = setInterval(function() {
+    document.getElementById('demo').innerHTML = --seconds_left;
+
+    if (seconds_left <= 0)
+    {
+       Redirect();
+       clearInterval(interval);
+    }
+}, 1000);
+</script>
+</body>
+</html>

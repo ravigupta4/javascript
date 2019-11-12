@@ -1,0 +1,78 @@
+<html>
+<head>
+<title> Quiz Running </title>
+</head>
+<body onload = "hide()">
+<p id="demo"> </p>
+<div>
+<form>
+<h4>Q1: What is the name of the place comes in this movie title, "Manikarnika: The Queen of ________"?</h4>
+</form><form>
+<input type = "radio" name="ques1" id="q1" value="Gwalior" checked>Gwalior <br>
+<input type = "radio" name="ques1" id="q1" value="Mandu">Mandu <br>
+<input type = "radio" name="ques1" id="q1" value="Kashi">Kashi <br>
+<input type = "radio" name="ques1" id="q1" value="Jhansi">Jhansi <br></form></div>
+<div id="hide">
+<h6>Answer is: Option (D)</h6>
+</div>
+<div><table><tr><th>
+<input type="button" id="btn1" value="Next" onclick="myFunction()"></th>
+<th><input type = "button" id="btn2" value="Show Answer" onclick="hideshow()"></th>
+</tr></table></div>
+<script>
+function myFunction()
+{
+var ele = document.getElementsByName('ques1'); 
+ for(i = 0; i < ele.length; i++) 
+{ 
+   if(ele[i].checked) 
+    var ans1 = ele[i].value; 
+} 
+if(ans1 == "Jhansi")
+{
+alert("Right answer");
+}
+else
+{
+alert("Wrong Answer :: Right answer is-- Jhansi");
+}
+window.location = "Question2.html";
+}
+function hideshow()
+{
+var x= document.getElementById("hide");
+if(x.style.display === "none")
+{
+x.style.display = "block";
+document.getElementById("btn2").value= "Hide Answer";
+}
+else
+{
+x.style.display = "none";
+document.getElementById("btn2").value = "Show Answer"
+}}
+function hide()
+{
+document.getElementById("hide").style.display= "none";
+}
+function Redirect() 
+    {  
+        window.location="Question2.html"; 
+    } 
+    //document.write("You will be redirected to a new page in 20 seconds"); 
+    //setTimeout('Redirect()', 20000);
+
+var seconds_left = 20;
+var interval = setInterval(function() {
+    document.getElementById('demo').innerHTML = --seconds_left;
+
+    if (seconds_left <= 0)
+    {
+       Redirect();
+       clearInterval(interval);
+    }
+}, 1000);
+
+</script>
+</body>
+</html>

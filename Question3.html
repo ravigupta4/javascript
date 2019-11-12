@@ -1,0 +1,79 @@
+<html>
+<head>
+<title> Quiz Running </title>
+</head>
+<body onload="hide()">
+<p id="demo"></p>
+<div>
+<form>
+<h4>Q3: The name of the Laccadive, Minicoy and Amindivi islands was changed to Lakshadweep by an Act of Parliament in?</h4>
+</form><form>
+<input type = "radio" name="ques3" id="ques3" value="1970"checked>1970 <br>
+<input type = "radio" name="ques3" id="ques3" value="1971">1971 <br>
+<input type = "radio" name="ques3" id="ques3" value="1972">1972 <br>
+<input type = "radio" name="ques3" id="ques3" value="1973">1973 <br></form></div>
+<div id="hide">
+<h6>Answer is: Option (D)</h6>
+</div>
+<div><table><tr><th>
+<input type="button" id="btn1" value="Back" onclick="back()"></th>
+<th><input type="button" id="btn2" value="Next" onclick="next()"></th>
+<th><input type = "button" onclick="hideshow()" id="btn3" value="Show Answer"></th>
+</tr></table></div>
+<script>
+function back()
+{
+window.location.href = "Question2.html";
+}
+function next()
+{
+var ele = document.getElementsByName('ques3');
+for(i=0;i<ele.length;i++){
+if(ele[i].checked)
+var ans3 = ele[i].value;
+}
+if(ans3 == "1973")
+{
+alert("Right Answer");
+}
+else
+{
+alert("Wrong Answer:  Right answer is--1973")
+}
+location.replace("Question4.html");
+}
+function hideshow()
+{
+var  x = document.getElementById("hide");
+
+if (x.style.display === "none") {
+    x.style.display = "block";
+document.getElementById("btn3").value= "Hide Answer";
+  } else {
+    x.style.display = "none";
+document.getElementById("btn3").value= "Show Answer";
+}
+}
+function hide()
+{
+document.getElementById("hide").style.display = "none";
+}
+function Redirect() 
+    {  
+        window.location="Question4.html"; 
+    } 
+    //document.write("You will be redirected to a new page in 20 seconds"); 
+    //setTimeout('Redirect()', 20000);
+var seconds_left = 20;
+var interval = setInterval(function() {
+    document.getElementById('demo').innerHTML = --seconds_left;
+
+    if (seconds_left <= 0)
+    {
+       Redirect();
+       clearInterval(interval);
+    }
+}, 1000);
+</script>
+</body>
+</html>

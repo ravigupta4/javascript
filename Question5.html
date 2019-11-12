@@ -1,0 +1,81 @@
+<html>
+<head>
+<title> Quiz Running </title>
+</head>
+<body onload="hide()">
+<p id="demo"></p>
+<div>
+<form>
+<h4>Q5: The members of Lok Sabha hold office for a term of</h4>
+</form><form>
+<input type = "radio" name="ques5" id="ques5" value="4 Years"checked>4 Years <br>
+<input type = "radio" name="ques5" id="ques5" value="5 Years">5 Years <br>
+<input type = "radio" name="ques5" id="ques5" value="6 Years">6 Years <br>
+<input type = "radio" name="ques5" id="ques5" value="3 Years">3 Years <br></form></div>
+<div id="hide">
+<h6>Answer is: Option (B)</h6>
+</div>
+<div><table><tr><th>
+<input type="button" id="btn1" value="Back" onclick="back()"></th>
+<th><input type="button" id="btn2" value="Next" onclick="next()"></th>
+<th><input type = "button" onclick="hideshow()" id="btn3" value="Show Answer"></th>
+</tr></table></div>
+<script>
+function back()
+{
+window.location.href = "Question4.html";
+}
+function next()
+{
+var ele = document.getElementsByName('ques5');
+for(i=0;i<ele.length;i++)
+{
+if(ele[i].checked)
+var ans5 = ele[i].value;
+}
+var x = "5 Years";
+if(ans5 == x)
+{
+alert("Right Answer");
+}
+else
+{
+alert("Wrong Answer:, Right answer is-- 5 Years");
+}
+location.replace("Question6.html");
+}
+function hideshow()
+{
+var  x = document.getElementById("hide");
+
+if (x.style.display === "none") {
+    x.style.display = "block";
+document.getElementById("btn3").value= "Hide Answer";
+  } else {
+    x.style.display = "none";
+document.getElementById("btn3").value= "Show Answer";
+}
+}
+function hide()
+{
+document.getElementById("hide").style.display = "none";
+}
+function Redirect() 
+    {  
+        window.location="Question6.html"; 
+    } 
+    //document.write("You will be redirected to a new page in 20 seconds"); 
+    //setTimeout('Redirect()', 20000);
+var seconds_left = 20;
+var interval = setInterval(function() {
+    document.getElementById('demo').innerHTML = --seconds_left;
+
+    if (seconds_left <= 0)
+    {
+       Redirect();
+       clearInterval(interval);
+    }
+}, 1000);
+</script>
+</body>
+</html>

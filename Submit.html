@@ -1,0 +1,40 @@
+<html>
+<head>
+<title> Answer of the Quiz </title>
+</head>
+<body onload="myFunction()">
+<p id= "demo"></p>
+<button onclick="backtoquiz()"> Back to Quiz </button>
+<script>
+//var answers = ["Ram", "Ram", "Ram", "Bharat", "Laxman", "Ram", "Laxman", "Satrughan", "Satrughan", "Bharat"]//can declare array this way as well.
+var anslen, text;
+//var answers = new Array();//we can decalre array this way as well.
+var answers = [];// can declare array this way as well.
+answers[0]= "Jhansi";
+answers[1]= "22";
+answers[2]= "1973";
+answers[3]= "High courts";
+answers[4]= "5 Years";
+answers[5]= "Jawaharlal Nehru";
+answers[6]= "Laxman";
+answers[7]= "Satrughan";
+answers[8]= "six years";
+answers[9]= "All of the above";
+anslen= answers.length;
+text = "<ol>";
+for(i=0;i<anslen;i++)
+{
+text = text +"<li>" + answers[i] + "</li>";
+}
+text = text + "</ol>"; 
+function myFunction()
+{
+document.getElementById("demo").innerHTML = "Original Answer is <br>" + text;
+}
+function backtoquiz()
+{
+window.location = "Question1.html";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<html>
+<head>
+<title> Quiz Running </title>
+</head>
+<body onload="hide()">
+<p id="demo"></p>
+<div>
+<form>
+<h4>Q9:The members of the Rajya Sabha are elected for a term ?</h4>
+</form><form>
+<input type = "radio" name="ques9" id="ques9" value= "six years" checked>six years <br>
+<input type = "radio" name="ques9" id="ques9" value= "determined by the state legislative assembly of a state">determined by the state legislative assembly of a state <br>
+<input type = "radio" name="ques9" id="ques9" value= "four years">four years<br>
+<input type = "radio" name="ques9" id="ques9" value= "None of the above">None of the above <br></form></div>
+<div id="hide">
+<h6>Answer is: Option (A)</h6>
+</div>
+<div><table><tr><th>
+<input type="button" id="btn1" value="Back" onclick="back()"></th>
+<th><input type="button" id="btn2" value="Next" onclick="next()"></th>
+<th><input type ="button" id="btn3" value="Show Answer" onclick="hideshow()"></th>
+</tr></table></div>
+<script>
+function back()
+{
+window.location.href = "Question8.html";
+}
+function next()
+{
+var ele = document.getElementsByName("ques9");
+for(i=0;i<ele.lenght;i++)
+{
+if(ele[i].checked)
+var ans9 = ele[i].value;
+}
+if(ans9 == "six years")
+{
+alert("Right Answer");
+}
+else
+{
+alert("Wrong Answer;,  Right answer is--six years");
+}
+location.replace("Question10.html");
+}
+function hideshow()
+{
+var x = document.getElementById("hide");
+if(x.style.display === "none")
+{
+x.style.display = "block";
+document.getElementById("btn3").value = "Hide Answer";
+}
+else
+{
+x.style.display = "none";
+document.getElementById("btn3").value = "Show Answer";
+}}
+function hide()
+{
+document.getElementById("hide").style.display = "none";
+}
+function Redirect() 
+    {  
+        window.location="Question10.html"; 
+    } 
+    //document.write("You will be redirected to a new page in 20 seconds"); 
+    //setTimeout('Redirect()', 20000);
+var seconds_left = 20;
+var interval = setInterval(function() {
+    document.getElementById('demo').innerHTML = --seconds_left;
+
+    if (seconds_left <= 0)
+    {
+       Redirect();
+       clearInterval(interval);
+    }
+}, 1000);
+</script>
+</body>
+</html>
