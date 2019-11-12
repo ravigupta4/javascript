@@ -4,6 +4,8 @@
 </head>
 <body onload="myFunction()">
 <p id= "demo"></p>
+<p id= "userAns"></p>
+<p id= "score"></p>
 <button onclick="backtoquiz()"> Back to Quiz </button>
 <script>
 //var answers = ["Ram", "Ram", "Ram", "Bharat", "Laxman", "Ram", "Laxman", "Satrughan", "Satrughan", "Bharat"]//can declare array this way as well.
@@ -35,6 +37,36 @@ function backtoquiz()
 {
 window.location = "Question1.html";
 }
+
+//dispplay user answer here
+
+var userAns = JSON.parse(localStorage.getItem('answer'));
+console.log(userAns);
+var count = 0;
+text1 = "<ol>";
+userAns.forEach(function(element,index){
+   var rightAns = answers[index];
+    var ind = index+1;
+    var index = "ques"+ind;
+    var usAns = element[index];
+    text1 = text1 +"<li>" + usAns + "</li>";
+    document.getElementById("userAns").innerHTML = "User Answer is <br>" + text1;   
+  if(rightAns==usAns){
+    count++;
+  }
+});
+
+text1 = text1 + "</ol>"; 
+document.getElementById("score").innerHTML = "User total score  is <br>" + count;   
+/*
+for(var i=0;i<userAns.length;i++){
+  var ind = i+1;
+  var element = userAns[i];
+  var key = "ques"+ind;
+  ans = element[key];
+  
+}*/
+
 </script>
 </body>
 </html>

@@ -33,6 +33,10 @@ for(i=0;i<ele.length;i++)
 if(ele[i].checked)
 var ans8 = ele[i].value;
 }
+var ans8 = { ques8: ans8 };
+            var allAns = JSON.parse(localStorage.getItem('answer'));
+            allAns.push(ans8);
+            localStorage.setItem('answer', JSON.stringify(allAns));
 if(ans8 == "Satrughan")
 {
 alert("Right Answer");

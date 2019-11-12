@@ -34,6 +34,10 @@ if(ele[i].checked)
 var ans5 = ele[i].value;
 }
 var x = "5 Years";
+var ans5 = { ques5: ans5 };
+            var allAns = JSON.parse(localStorage.getItem('answer'));
+            allAns.push(ans5);
+            localStorage.setItem('answer', JSON.stringify(allAns));
 if(ans5 == x)
 {
 alert("Right Answer");

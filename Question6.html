@@ -33,6 +33,10 @@ for(i=0;i<ele.length;i++)
 if(ele[i].checked)
 var ans6 = ele[i].value;
 }
+var ans6 = { ques6: ans6 };
+            var allAns = JSON.parse(localStorage.getItem('answer'));
+            allAns.push(ans6);
+            localStorage.setItem('answer', JSON.stringify(allAns));
 if(ans6 == "Jawaharlal Nehru")
 {
 alert("Right Answer");

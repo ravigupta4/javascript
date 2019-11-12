@@ -33,6 +33,10 @@ for(i=0;i<ele.length;i++)
 if(ele[i].checked)
 var ans4 = ele[i].value;
 }
+var ans4 = { ques4: ans4 };
+            var allAns = JSON.parse(localStorage.getItem('answer'));
+            allAns.push(ans4);
+            localStorage.setItem('answer', JSON.stringify(allAns));
 if(ans4=="High courts")
 {
 alert("Right Answer");

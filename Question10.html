@@ -32,6 +32,10 @@ for(i=0;i<ele.length;i++){
 if(ele[i].checked)
 var ans10 = ele[i].value;
 }
+var ans10 = { ques10: ans10 };
+            var allAns = JSON.parse(localStorage.getItem('answer'));
+            allAns.push(ans10);
+            localStorage.setItem('answer', JSON.stringify(allAns));
 if(ans10 == "All of the above")
 {alert("Right Answer")}
 else

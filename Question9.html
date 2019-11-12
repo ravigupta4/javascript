@@ -33,6 +33,10 @@ for(i=0;i<ele.lenght;i++)
 if(ele[i].checked)
 var ans9 = ele[i].value;
 }
+var ans9 = { ques9: ans9 };
+            var allAns = JSON.parse(localStorage.getItem('answer'));
+            allAns.push(ans9);
+            localStorage.setItem('answer', JSON.stringify(allAns));
 if(ans9 == "six years")
 {
 alert("Right Answer");

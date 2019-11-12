@@ -8,10 +8,11 @@
 <form>
 <h4>Q1: What is the name of the place comes in this movie title, "Manikarnika: The Queen of ________"?</h4>
 </form><form>
+        <input type = "radio" name="ques1" id="q1" value="Jhansi">Jhansi <br>
 <input type = "radio" name="ques1" id="q1" value="Gwalior" checked>Gwalior <br>
 <input type = "radio" name="ques1" id="q1" value="Mandu">Mandu <br>
 <input type = "radio" name="ques1" id="q1" value="Kashi">Kashi <br>
-<input type = "radio" name="ques1" id="q1" value="Jhansi">Jhansi <br></form></div>
+</form></div>
 <div id="hide">
 <h6>Answer is: Option (D)</h6>
 </div>
@@ -28,8 +29,12 @@ var ele = document.getElementsByName('ques1');
    if(ele[i].checked) 
     var ans1 = ele[i].value; 
 } 
+
+var ans = {ques1 : ans1};
+    localStorage.setItem('answer',JSON.stringify([ans]))
 if(ans1 == "Jhansi")
 {
+    
 alert("Right answer");
 }
 else
